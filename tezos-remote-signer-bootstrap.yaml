@@ -29,5 +29,10 @@
         state: present
         key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 
+    - name: Update all packages to their latest version
+      apt:
+        name: "*"
+        state: latest
+
     - name: Reboot machine
       reboot:
